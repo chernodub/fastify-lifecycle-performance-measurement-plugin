@@ -52,6 +52,7 @@ app.addHook('onResponse', (request, _, done) => {
   // Or, you could observe a custom metrics histogram:
   //   metrics.histogram('fastify_lifecycle_total_time_ms').observe(requestPerformance.totalTimeMs);
   //   metrics.histogram('fastify_lifecycle_handler_time_ms').observe(requestPerformance.handlerTimeMs);
+  // For example https://github.com/chernodub/otlp-showcase/commit/e0005a96a24814705f7311528342d77cc2cae5bd#r148689819
 
   done();
 });
