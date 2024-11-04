@@ -1,4 +1,4 @@
-# `fastify-lifecycle-performance-measurement-plugin`
+# `fastify-lifecycle-performance-measurement-plugin` ![NPM Version](https://img.shields.io/npm/v/fastify-lifecycle-performance-measurement-plugin)
 
 A Fastify plugin that measures and exposes detailed request lifecycle performance metrics.
 
