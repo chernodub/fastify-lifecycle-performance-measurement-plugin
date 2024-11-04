@@ -4,8 +4,6 @@ A Fastify plugin that measures and exposes detailed request lifecycle performanc
 
 ## What metrics are measured and how?
 
-The plugin adds a set of hooks that measure the time spent in different stages of the request lifecycle.
-
 Look at the following diagram to understand each metric and the stages of the request lifecycle:
 
 ![Request lifecycle](./docs/lifecycle-measurements.png)
