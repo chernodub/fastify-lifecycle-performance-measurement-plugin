@@ -1,0 +1,30 @@
+{
+  "name": "fastify-lifecycle-performance-measurement-plugin",
+  "version": "1.0.0",
+  "description": "A Fastify plugin that measures and exposes detailed request lifecycle performance metrics.",
+  "author": "Viktor Chernodub (https://github.com/chernodub)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "format": "prettier --write .",
+    "test": "vitest",
+    "release": "release-it"
+  },
+  "dependencies": {
+    "fastify-plugin": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.7",
+    "prettier": "^3.3.3",
+    "release-it": "^17.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "peerDependencies": {
+    "fastify": "^5.0.0"
+  }
+}
