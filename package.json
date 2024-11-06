@@ -17,6 +17,9 @@
     "test": "vitest",
     "release": "release-it"
   },
+  "engines": {
+    "node": "22.11.0"
+  },
   "dependencies": {
     "fastify-plugin": "^5.0.1"
   },
