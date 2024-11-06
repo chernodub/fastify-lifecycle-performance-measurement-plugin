@@ -6,7 +6,7 @@ A Fastify plugin that measures and exposes detailed request lifecycle performanc
 
 Look at the following diagram to understand each metric and the stages of the request lifecycle:
 
-![Request lifecycle](./docs/lifecycle-measurements.png)
+![Request lifecycle](https://github.com/chernodub/fastify-lifecycle-performance-measurement-plugin/blob/main/docs/lifecycle-measurements.png?raw=true)
 
 ## Why is this useful?
 
