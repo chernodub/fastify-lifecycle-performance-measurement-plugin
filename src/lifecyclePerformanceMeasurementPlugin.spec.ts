@@ -6,6 +6,7 @@ import { lifecyclePerformanceMeasurementPlugin } from './lifecyclePerformanceMea
 describe('lifecyclePerformanceMeasurementPlugin', () => {
   let app: FastifyInstance;
   let capturedRequest: FastifyRequest;
+  const TIMEOUT_MS = 50;
 
   beforeEach(async () => {
     app = Fastify();
@@ -14,7 +15,7 @@ describe('lifecyclePerformanceMeasurementPlugin', () => {
     app.get('/', async (request) => {
       capturedRequest = request;
       // Simulate some work
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await new Promise((resolve) => setTimeout(resolve, TIMEOUT_MS));
       return { hello: 'world' };
     });
   });
@@ -57,8 +58,12 @@ describe('lifecyclePerformanceMeasurementPlugin', () => {
       throw new Error('Performance data not collected');
     }
 
-    expect(performance.totalTimeMs).toBeGreaterThan(50);
-    expect(performance.handlerTimeMs).toBeGreaterThan(50);
+    // https://github.com/chernodub/fastify-lifecycle-performance-measurement-plugin/actions/runs/11698564225/job/32579096696
+    const errorPercent = 0.01;
+    const expectedTimeMs = TIMEOUT_MS - TIMEOUT_MS * errorPercent;
+
+    expect(performance.totalTimeMs).toBeGreaterThan(expectedTimeMs);
+    expect(performance.handlerTimeMs).toBeGreaterThan(expectedTimeMs);
 
     // Verify timing segments add up approximately to total
     const segmentSum =
