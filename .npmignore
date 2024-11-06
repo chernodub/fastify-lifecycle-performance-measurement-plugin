@@ -1,0 +1,5 @@
+*
+!dist/
+!tsconfig.json
+!package*.json
+!README.md
